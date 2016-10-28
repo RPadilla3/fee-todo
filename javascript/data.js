@@ -1,5 +1,6 @@
 (function() {
 
+    var toDoArray = [];
     window.todo = window.todo || {};
 
     function addToDo(text) {
@@ -25,16 +26,36 @@
         document.querySelector('ul').appendChild(addLi);
     }
 
-      // Everything below this is code for the submit
+    // Everything below this is code for the submit
 
-    document.querySelector('form').addEventListener('submit', function submit(eventObj)  {
+    document
+    .querySelector('form')
+    .addEventListener('submit', function submit(eventObj) {
     eventObj.preventDefault();
 
-    var toDoSubmission = document.querySelector('.new-todo').value;
+      var toDoSubmission = document.querySelector('.new-todo').value;
 
-    addToDo(toDoSubmission);
+      var toDoList = {
+        text: toDoSubmission,
+        time: Date.now()
+      };
 
-  });
+      toDoArray.push(toDoList);
+      console.log(toDoArray);
+
+
+
+
+
+
+
+
+
+
+        addToDo(toDoSubmission);
+
+    });
+
 
 
 
