@@ -25,5 +25,18 @@
         document.querySelector('ul').appendChild(addLi);
     }
 
-        addToDo('Whats up');
+      // Everything below this is code for the submit
+
+    document.querySelector('form').addEventListener('submit', function submit(eventObj)  {
+    eventObj.preventDefault();
+
+    var toDoSubmission = document.querySelector('.new-todo').value;
+
+    addToDo(toDoSubmission);
+
+  });
+
+
+
+
 })();
