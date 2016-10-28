@@ -5,26 +5,25 @@
     function addToDo(text) {
 
         var addLi = document.createElement('li');
-        addLi.innerText = text
-        addLi.classList.add('.new-to-do');
-        document.querySelector('ul').appendChild(addLi);
 
         var addArticle = document.createElement('article');
-        document.querySelector('li').appendChild(addArticle);
 
         var addButton = document.createElement('button');
-        addButton.classList.add('.check');
-        document.querySelector('article').appendChild(addButton);
+        addButton.classList.add('check');
+        addArticle.appendChild(addButton);
 
         var addP = document.createElement('p');
-        document.querySelector('article').appendChild(addP);
+        addP.innerText = text;
+        addArticle.appendChild(addP);
 
         var addXButton = document.createElement('button');
-        addXButton.classList.add('.delete');
-        document.querySelector('article').appendChild(addXButton);
+        addXButton.classList.add('delete');
+        addXButton.innerText = 'X';
+        addArticle.appendChild(addXButton);
 
-
+        addLi.appendChild(addArticle)
+        document.querySelector('ul').appendChild(addLi);
     }
-    
 
+        addToDo('Whats up');
 })();
