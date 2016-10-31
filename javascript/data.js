@@ -37,14 +37,25 @@
             addToDo(toDoSubmission);
         });
 
-        document
-        .querySelector('ul')
-        .addEventListener('click', function complete(eventObj) {
-            console.log('in complete');
-            eventObj.target.classList.add('completed');
+        // document
+        // .querySelector('ul')
+        // .addEventListener('click', function complete(eventObj) {
+        //     console.log('incomplete');
+        //     eventObj.target.classList.add('completed');
+        //
+        // });
 
-        });
+      document
+      .querySelector(".items")
+      .addEventListener("click", function finishToDo(line){
+        if ( line.target.tagName === 'BUTTON' && line.target.className === 'check' ) {
+        line.target.parentNode.classList.toggle("completed");
+        }
+        else if ( line.target.tagName === 'BUTTON' && line.target.className === 'delete' ) {
+        line.target.parentNode.parentNode.remove();
+        }
 
+      });
 
-
+         window.todo = window.todo || {};
 })();
